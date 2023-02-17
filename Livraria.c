@@ -1,5 +1,3 @@
-//Alunos: Enzo Fagundes, Renan Vigarani e Vadson Santos
-
 //Incluindo bibliotecas
 
 #include <stdio.h>
@@ -54,7 +52,7 @@ struct reg_editora
     char email[20];
 };
 
-//Prototipos de funções
+//Prototipos de funÃ§Ãµes
 
 void cadastrarLivro();
 void cadastrarAutor();
@@ -76,7 +74,7 @@ void relatorioLivrosAutor();
 void relatorioEstoqueTxt();
 void relatorioPrecoCategoria();
 
-//Funções
+//FunÃ§Ãµes
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
@@ -100,13 +98,13 @@ int main()
         printf("\n**  9)  Excluir categoria                              **");
         printf("\n**  10) Consultar Livro por palavra-chave              **");
         printf("\n**  11) Consultar autores pelo nome                    **");
-        printf("\n**  12) Relatório de livros por categoria              **");
-        printf("\n**  13) Relatório de livros de um autor                **");
-        printf("\n**  14) Relatório de livros por estoque                **");
-        printf("\n**  15) Relatório de livros por preço por categoria    **");
+        printf("\n**  12) RelatÃ³rio de livros por categoria              **");
+        printf("\n**  13) RelatÃ³rio de livros de um autor                **");
+        printf("\n**  14) RelatÃ³rio de livros por estoque                **");
+        printf("\n**  15) RelatÃ³rio de livros por preÃ§o por categoria    **");
         printf("\n**  0)  Sair                                           **");
 
-        printf("\n\n-> Opção: ");
+        printf("\n\n-> OpÃ§Ã£o: ");
 
         fflush(stdin);
         scanf("%d", &opc);
@@ -114,54 +112,54 @@ int main()
         switch(opc)
         {
         case 1:
-            cadastrarLivro();//Chama a função para cadastrar livro
+            cadastrarLivro();//Chama a funÃ§Ã£o para cadastrar livro
             break;
         case 2:
-            cadastrarAutor();//Chama a função para cadastrar autor
+            cadastrarAutor();//Chama a funÃ§Ã£o para cadastrar autor
             break;
         case 3:
-            cadastrarCategoria();//Chama a função para cadastrar categoria
+            cadastrarCategoria();//Chama a funÃ§Ã£o para cadastrar categoria
             break;
         case 4:
-            cadastrarEditora();//Chama a função para cadastrar editora
+            cadastrarEditora();//Chama a funÃ§Ã£o para cadastrar editora
             break;
         case 5:
-            listarLivros();//Chama a função para listar livros
+            listarLivros();//Chama a funÃ§Ã£o para listar livros
             break;
         case 6:
-            listarAutores();//Chama a função para listar autores
+            listarAutores();//Chama a funÃ§Ã£o para listar autores
             break;
         case 7:
-            listarCategorias();//Chama a função para listar categorias
+            listarCategorias();//Chama a funÃ§Ã£o para listar categorias
             break;
         case 8:
-            listarEditoras();//Chama a função para listar editoras
+            listarEditoras();//Chama a funÃ§Ã£o para listar editoras
             break;
         case 9:
-            excluirCategoria();//Chama a função para excluir fisicamente uma categoria
+            excluirCategoria();//Chama a funÃ§Ã£o para excluir fisicamente uma categoria
             break;
         case 10:
-            consultarPalavraChaveTitulo();//Chama a função para consultar livro através de uma palavra chave
+            consultarPalavraChaveTitulo();//Chama a funÃ§Ã£o para consultar livro atravÃ©s de uma palavra chave
             break;
         case 11:
-            consultarAutoresPeloNome();//Chama a função para consultar autores por uma parte do nome
+            consultarAutoresPeloNome();//Chama a funÃ§Ã£o para consultar autores por uma parte do nome
             break;
         case 12:
-            relatorioLivrosCategoria();//chama a função para relatar todos os livros de uma categoria
+            relatorioLivrosCategoria();//chama a funÃ§Ã£o para relatar todos os livros de uma categoria
             break;
         case 13:
-            relatorioLivrosAutor();//Chama a função para relatar todos os livros de um autor
+            relatorioLivrosAutor();//Chama a funÃ§Ã£o para relatar todos os livros de um autor
             break;
         case 14:
-            relatorioEstoqueTxt();//Chama a funçãp para relatar todos os livros com estoque abaixo de um valor especificado
+            relatorioEstoqueTxt();//Chama a funÃ§Ã£p para relatar todos os livros com estoque abaixo de um valor especificado
             break;
         case 15:
-            relatorioPrecoCategoria();//Chama a função para relatar todos os livros mais caros de uma categoria
+            relatorioPrecoCategoria();//Chama a funÃ§Ã£o para relatar todos os livros mais caros de uma categoria
             break;
         case 0:
             break;
         default:
-            printf("\nOpção digitada inválida! Retornando ao menu...\n\n");
+            printf("\nOpÃ§Ã£o digitada invÃ¡lida! Retornando ao menu...\n\n");
             break;
         }
     }
@@ -171,7 +169,7 @@ int main()
 
 void cadastrarLivro()
 {
-    //Declarando ponteiros, structs e variáveis
+    //Declarando ponteiros, structs e variÃ¡veis
 
     FILE *fpLivros;
     struct reg_livro livro;
@@ -184,17 +182,17 @@ void cadastrarLivro()
 
     //Entrada de Dados do livro
 
-    printf("\nDigite o código do livro: ");
+    printf("\nDigite o cÃ³digo do livro: ");
     fflush(stdin);
     scanf("%i", &livro.codigo);
 
-    //Verificar se código digitado já está cadastrado
+    //Verificar se cÃ³digo digitado jÃ¡ estÃ¡ cadastrado
     livroConsulta = buscarLivro(livro.codigo);
 
     if(livroConsulta.codigo != -1)
     {
-        printf("\nCódigo do livro já cadastrado!");
-        printf("\nDeseja cadastrar outro código?(S/N) ");
+        printf("\nCÃ³digo do livro jÃ¡ cadastrado!");
+        printf("\nDeseja cadastrar outro cÃ³digo?(S/N) ");
         fflush(stdin);
         scanf("%c", &opc);
         if((opc=='N')||(opc=='n'))
@@ -209,11 +207,11 @@ void cadastrarLivro()
         }
     }
 
-    printf("Digite o título do livro: ");
+    printf("Digite o tÃ­tulo do livro: ");
     fflush(stdin);
     gets(livro.titulo);
 
-    printf("Digite o preço do livro: ");
+    printf("Digite o preÃ§o do livro: ");
     fflush(stdin);
     scanf("%f", &livro.preco);
 
@@ -223,7 +221,7 @@ void cadastrarLivro()
 
     if(contAutores == 1)
     {
-        printf("Digite o código do autor: ");
+        printf("Digite o cÃ³digo do autor: ");
         fflush(stdin);
         scanf("%i", &livro.autor1);
 
@@ -233,7 +231,7 @@ void cadastrarLivro()
     }
     if(contAutores == 2)
     {
-        printf("Digite o código dos dois autores: ");
+        printf("Digite o cÃ³digo dos dois autores: ");
         fflush(stdin);
         scanf("%i %i", &livro.autor1, &livro.autor2);
 
@@ -242,7 +240,7 @@ void cadastrarLivro()
     }
     if(contAutores == 3)
     {
-        printf("Digite o código dos três autores: ");
+        printf("Digite o cÃ³digo dos trÃªs autores: ");
         fflush(stdin);
         scanf("%i %i %i", &livro.autor1, &livro.autor2, &livro.autor3);
 
@@ -250,20 +248,20 @@ void cadastrarLivro()
     }
     if(contAutores == 4)
     {
-        printf("Digite o código dos quatro autores: ");
+        printf("Digite o cÃ³digo dos quatro autores: ");
         fflush(stdin);
         scanf("%i %i %i %i", &livro.autor1, &livro.autor2, &livro.autor3, &livro.autor4);
     }
 
-    printf("Digite o código da categoria do livro: ");
+    printf("Digite o cÃ³digo da categoria do livro: ");
     fflush(stdin);
     scanf("%d", &livro.categoria);
 
-    printf("Digite o código da editora do livro: ");
+    printf("Digite o cÃ³digo da editora do livro: ");
     fflush(stdin);
     scanf("%d", &livro.editora);
 
-    printf("Digite a edição do livro: ");
+    printf("Digite a ediÃ§Ã£o do livro: ");
     fflush(stdin);
     scanf("%d", &livro.edicao);
 
@@ -277,9 +275,9 @@ void cadastrarLivro()
 
     //Confirmar dados gravados
     printf("\n--------------------------------------------------------\n\n");
-    printf("\nCódigo - %d", livro.codigo);
+    printf("\nCÃ³digo - %d", livro.codigo);
     printf("\nNome - %s", livro.titulo);
-    printf("\nPreço - %5.2f", livro.preco);
+    printf("\nPreÃ§o - %5.2f", livro.preco);
 
     printf("\n\n-> Confirmar cadastro?(S/N) ");
     fflush(stdin);
@@ -287,7 +285,7 @@ void cadastrarLivro()
 
     if((opc=='N')||(opc=='n'))
     {
-        printf("\nLivro não cadastrado!");
+        printf("\nLivro nÃ£o cadastrado!");
         printf("\n\nDeseja realizar cadastro novamente?(S/N) ");
         fflush(stdin);
         scanf("%c", &opc);
@@ -314,7 +312,7 @@ void cadastrarLivro()
 
 void cadastrarAutor()
 {
-    //Declarando ponteiros, structs e variáveis
+    //Declarando ponteiros, structs e variÃ¡veis
 
     FILE *fpAutores;
     struct reg_autor autor;
@@ -325,17 +323,17 @@ void cadastrarAutor()
     printf("\n--------------------------------------------------------\n");
 
     //Entrada de Dados do autor
-    printf("\nDigite o código do autor: ");
+    printf("\nDigite o cÃ³digo do autor: ");
     fflush(stdin);
     scanf("%d", &autor.codigo);
 
-    //Verificar se código do autor já está cadastrado
+    //Verificar se cÃ³digo do autor jÃ¡ estÃ¡ cadastrado
     autorConsulta = buscarAutor(autor.codigo);
 
     if(autorConsulta.codigo != -1)
     {
-        printf("\nCódigo do autor já cadastrado!");
-        printf("\nDeseja cadastrar outro código?(S/N) ");
+        printf("\nCÃ³digo do autor jÃ¡ cadastrado!");
+        printf("\nDeseja cadastrar outro cÃ³digo?(S/N) ");
         fflush(stdin);
         scanf("%c", &opc);
         if((opc=='N')||(opc=='n'))
@@ -360,7 +358,7 @@ void cadastrarAutor()
 
     //Confirmar dados gravados
     printf("\n--------------------------------------------------------\n");
-    printf("\nCódigo - %d", autor.codigo);
+    printf("\nCÃ³digo - %d", autor.codigo);
     printf("\nSobrenome - %s", autor.sobrenome);
     printf("\nNome - %s", autor.nome);
 
@@ -370,7 +368,7 @@ void cadastrarAutor()
 
     if((opc=='N')||(opc=='n'))
     {
-        printf("\nAutor não cadastrado!");
+        printf("\nAutor nÃ£o cadastrado!");
         printf("\n\nDeseja realizar cadastro novamente?(S/N) ");
         fflush(stdin);
         scanf("%c", &opc);
@@ -396,7 +394,7 @@ void cadastrarAutor()
 
 void cadastrarCategoria()
 {
-    //Declarando ponteiros, structs e variáveis
+    //Declarando ponteiros, structs e variÃ¡veis
 
     FILE *fpCategorias;
     struct reg_categoria categoria;
@@ -407,17 +405,17 @@ void cadastrarCategoria()
     printf("\n--------------------------------------------------------\n");
 
     //Entrada de Dados do autor
-    printf("\nDigite o código da categoria: ");
+    printf("\nDigite o cÃ³digo da categoria: ");
     fflush(stdin);
     scanf("%d", &categoria.codigo);
 
-    //Verificar se código da categoria já está cadastrado
+    //Verificar se cÃ³digo da categoria jÃ¡ estÃ¡ cadastrado
     categoriaConsulta = buscarCategoria(categoria.codigo);
 
     if(categoriaConsulta.codigo != -1)
     {
-        printf("\nCódigo da categoria já cadastrado!");
-        printf("\nDeseja cadastrar outro código?(S/N) ");
+        printf("\nCÃ³digo da categoria jÃ¡ cadastrado!");
+        printf("\nDeseja cadastrar outro cÃ³digo?(S/N) ");
         fflush(stdin);
         scanf("%c", &opc);
         if((opc=='N')||(opc=='n'))
@@ -432,13 +430,13 @@ void cadastrarCategoria()
         }
     }
 
-    printf("Digite a descrição da categoria: ");
+    printf("Digite a descriÃ§Ã£o da categoria: ");
     fflush(stdin);
     gets(categoria.descricao);
 
     //Confirmar dados gravados
     printf("\n--------------------------------------------------------\n");
-    printf("\nCódigo - %d\nDescrição - %s\n", categoria.codigo, categoria.descricao);
+    printf("\nCÃ³digo - %d\nDescriÃ§Ã£o - %s\n", categoria.codigo, categoria.descricao);
 
     printf("\n-> Confirmar cadastro?(S/N) ");
     fflush(stdin);
@@ -446,7 +444,7 @@ void cadastrarCategoria()
 
     if((opc=='N')||(opc=='n'))
     {
-        printf("\nCategoria não cadastrada!");
+        printf("\nCategoria nÃ£o cadastrada!");
         printf("\n\nDeseja realizar cadastro novamente?(S/N) ");
         fflush(stdin);
         scanf("%c", &opc);
@@ -473,7 +471,7 @@ void cadastrarCategoria()
 
 void cadastrarEditora()
 {
-    //Declarando ponteiros, structs e variáveis
+    //Declarando ponteiros, structs e variÃ¡veis
 
     FILE *fpEditoras;
     struct reg_editora editora, editoraConsulta;
@@ -483,17 +481,17 @@ void cadastrarEditora()
     printf("\n--------------------------------------------------------\n");
 
     //Entrada de Dados do autor
-    printf("\nDigite o código da editora: ");
+    printf("\nDigite o cÃ³digo da editora: ");
     fflush(stdin);
     scanf("%d", &editora.codigo);
 
-    //Verificar se código da editora já está cadastrado
+    //Verificar se cÃ³digo da editora jÃ¡ estÃ¡ cadastrado
     editoraConsulta = buscarEditora(editora.codigo);
 
     if(editoraConsulta.codigo != -1)
     {
-        printf("\nCódigo da editora já cadastrado!");
-        printf("\nDeseja cadastrar outro código?(S/N) ");
+        printf("\nCÃ³digo da editora jÃ¡ cadastrado!");
+        printf("\nDeseja cadastrar outro cÃ³digo?(S/N) ");
 
         if((opc=='N')||(opc=='n'))
         {
@@ -515,7 +513,7 @@ void cadastrarEditora()
     fflush(stdin);
     gets(editora.contato);
 
-    printf("Digite o número de telefone da editora: ");
+    printf("Digite o nÃºmero de telefone da editora: ");
     fflush(stdin);
     gets(editora.fone);
 
@@ -525,7 +523,7 @@ void cadastrarEditora()
 
     //Confirmar dados gravados
     printf("\n--------------------------------------------------------\n");
-    printf("\nCódigo - %d", editora.codigo);
+    printf("\nCÃ³digo - %d", editora.codigo);
     printf("\nNome - %s", editora.nome);
     printf("\nContato - %s", editora.contato);
     printf("\nTelefone - %s", editora.fone);
@@ -537,7 +535,7 @@ void cadastrarEditora()
 
     if((opc=='N')||(opc=='n'))
     {
-        printf("\nEditora não cadastrada!");
+        printf("\nEditora nÃ£o cadastrada!");
         printf("\n\nDeseja realizar cadastro novamente?(S/N) ");
         fflush(stdin);
         scanf("%c", &opc);
@@ -564,7 +562,7 @@ void cadastrarEditora()
 
 void listarLivros()
 {
-    //Declarando ponteiros, structs e variáveis
+    //Declarando ponteiros, structs e variÃ¡veis
 
     FILE *fpLivros;
     struct reg_livro livro;
@@ -580,13 +578,13 @@ void listarLivros()
 
     while(fread(&livro, sizeof(livro), 1, fpLivros)==1)
     {
-        printf("\nCódigo - %d", livro.codigo);
-        printf("\nTítulo - %s", livro.titulo);
-        printf("\nPreço - %5.2f", livro.preco);
-        printf("\nCódigo Autor 1 - %d", livro.autor1);
-        printf("\nCódigo Autor 2 - %d", livro.autor2);
-        printf("\nCódigo Autor 3 - %d", livro.autor3);
-        printf("\nCódigo Autor 4 - %d", livro.autor4);
+        printf("\nCÃ³digo - %d", livro.codigo);
+        printf("\nTÃ­tulo - %s", livro.titulo);
+        printf("\nPreÃ§o - %5.2f", livro.preco);
+        printf("\nCÃ³digo Autor 1 - %d", livro.autor1);
+        printf("\nCÃ³digo Autor 2 - %d", livro.autor2);
+        printf("\nCÃ³digo Autor 3 - %d", livro.autor3);
+        printf("\nCÃ³digo Autor 4 - %d", livro.autor4);
         printf("\nCategoria - %d", livro.categoria);
         printf("\nAno - %s", livro.ano);
         printf("\nQuantidade - %d", livro.qtde);
@@ -601,7 +599,7 @@ void listarLivros()
 
 void listarAutores()
 {
-    //Declarando ponteiros, structs e variáveis
+    //Declarando ponteiros, structs e variÃ¡veis
 
     FILE *fpAutores;
     struct reg_autor autor;
@@ -616,7 +614,7 @@ void listarAutores()
 
     while(fread(&autor, sizeof(autor), 1, fpAutores)==1)
     {
-        printf("\nCódigo - %d", autor.codigo);
+        printf("\nCÃ³digo - %d", autor.codigo);
         printf("\nSobrenome - %s", autor.sobrenome);
         printf("\nNome - %s", autor.nome);
 
@@ -630,7 +628,7 @@ void listarAutores()
 
 void listarCategorias()
 {
-    //Declarando ponteiros, structs e variáveis
+    //Declarando ponteiros, structs e variÃ¡veis
 
     FILE *fpCategorias;
     struct reg_categoria categoria;
@@ -645,7 +643,7 @@ void listarCategorias()
 
     while(fread(&categoria, sizeof(categoria), 1, fpCategorias)==1)
     {
-        printf("\nCódigo - %d", categoria.codigo);
+        printf("\nCÃ³digo - %d", categoria.codigo);
         printf("\nCategoria - %s", categoria.descricao);
 
         printf("\n\n--------------------------------------------------------\n");
@@ -658,7 +656,7 @@ void listarCategorias()
 
 void listarEditoras()
 {
-    //Declarando ponteiros, structs e variáveis
+    //Declarando ponteiros, structs e variÃ¡veis
 
     FILE *fpEditoras;
     struct reg_editora editora;
@@ -673,7 +671,7 @@ void listarEditoras()
 
     while(fread(&editora, sizeof(editora), 1, fpEditoras)==1)
     {
-        printf("\nCódigo - %d", editora.codigo);
+        printf("\nCÃ³digo - %d", editora.codigo);
         printf("\nNome - %s", editora.nome);
         printf("\nContato - %s", editora.contato);
         printf("\nFone - %s", editora.fone);
@@ -689,7 +687,7 @@ void listarEditoras()
 
 void excluirCategoria()
 {
-    //Declarando arquivos, structs e variáveis
+    //Declarando arquivos, structs e variÃ¡veis
     FILE *fpCategorias, *fpCategoriasNovo;
     struct reg_categoria categoria;
     int cod, achou=0;
@@ -698,9 +696,9 @@ void excluirCategoria()
     printf("\n**                  EXCLUIR CATEGORIA                 **\n");
     printf("\n--------------------------------------------------------\n");
 
-    //Entrada de dados para exclusão
+    //Entrada de dados para exclusÃ£o
 
-    printf("\nDigite o código da categoria que será excluída: ");
+    printf("\nDigite o cÃ³digo da categoria que serÃ¡ excluÃ­da: ");
     fflush(stdin);
     scanf("%d",&cod);
 
@@ -711,8 +709,8 @@ void excluirCategoria()
     {
         if (categoria.codigo==cod)  //Encontrou a categoria
         {
-            printf("\nCódigo - %d", categoria.codigo);
-            printf("\nDescrição - %s", categoria.descricao);
+            printf("\nCÃ³digo - %d", categoria.codigo);
+            printf("\nDescriÃ§Ã£o - %s", categoria.descricao);
 
             printf("\n\n--------------------------------------------------------\n");
 
@@ -722,18 +720,18 @@ void excluirCategoria()
 
     fclose(fpCategorias);
 
-    //Verificar se categoria NÃO foi localizada
+    //Verificar se categoria NÃƒO foi localizada
     if (achou==0)
     {
 
-        printf("\nCategoria não Localizada!!");
-        printf("\n\nDeseja digitar o código novamente?(S/N) ");
+        printf("\nCategoria nÃ£o Localizada!!");
+        printf("\n\nDeseja digitar o cÃ³digo novamente?(S/N) ");
         fflush(stdin);
         scanf("%c", &opc);
 
         if((opc=='s')||(opc=='S'))
         {
-            //Abre a função novamente e depois de executar volta ao menu principal
+            //Abre a funÃ§Ã£o novamente e depois de executar volta ao menu principal
             excluirCategoria();
             return;
         }
@@ -751,14 +749,14 @@ void excluirCategoria()
 
     if ((opc=='N')||(opc=='n'))
     {
-        printf("\nCategoria não confirmado!");
-        printf("\n\nDeseja digitar o código novamente?(S/N) ");
+        printf("\nCategoria nÃ£o confirmado!");
+        printf("\n\nDeseja digitar o cÃ³digo novamente?(S/N) ");
         fflush(stdin);
         scanf("%c", &opc);
 
         if((opc=='S')||(opc=='s'))
         {
-            //Abre a função novamente e depois de executar volta ao menu principal
+            //Abre a funÃ§Ã£o novamente e depois de executar volta ao menu principal
             excluirCategoria();
             return;
         }
@@ -768,7 +766,7 @@ void excluirCategoria()
         }
     }
 
-    //Categoria Confirmada - confirmar a exclusão
+    //Categoria Confirmada - confirmar a exclusÃ£o
 
     printf("\nExcluir categoria?(S/N) ");
     fflush(stdin);
@@ -776,14 +774,14 @@ void excluirCategoria()
 
     if ((opc=='N')||(opc=='n'))
     {
-        printf("\nExclusão Cancelada!");
-        printf("\n\nDeseja digitar o código novamente?(S/N) ");
+        printf("\nExclusÃ£o Cancelada!");
+        printf("\n\nDeseja digitar o cÃ³digo novamente?(S/N) ");
         fflush(stdin);
         scanf("%c", &opc);
 
         if((opc=='S')||(opc=='s'))
         {
-            //Abre a função novamente e depois de executar volta ao menu principal
+            //Abre a funÃ§Ã£o novamente e depois de executar volta ao menu principal
             excluirCategoria();
             return;
         }
@@ -812,23 +810,23 @@ void excluirCategoria()
     system("del Categorias.dat");
     system("ren Categoriasnew.dat Categorias.dat");
 
-    printf("\nCategoria excluída com sucesso!\n\n");
+    printf("\nCategoria excluÃ­da com sucesso!\n\n");
 
 }//Fim excluirCategoria
 
 void consultarPalavraChaveTitulo()
 {
-    //Declaração de ponteiros, structs e variáveis
+    //DeclaraÃ§Ã£o de ponteiros, structs e variÃ¡veis
 
     FILE *fpLivros;
-    //Todas as structs estão declaradas para realizar a busca das informações do livro
+    //Todas as structs estÃ£o declaradas para realizar a busca das informaÃ§Ãµes do livro
     struct reg_livro livro;
     struct reg_autor autor;
     struct reg_categoria categoria;
     struct reg_editora editora;
 
     char palavra[30];
-    int achou=0; //Variável flag
+    int achou=0; //VariÃ¡vel flag
 
     printf("\n**               CONSULTAR PALAVRA-CHAVE              **\n");
     printf("\n--------------------------------------------------------\n");
@@ -841,7 +839,7 @@ void consultarPalavraChaveTitulo()
 
     fpLivros = fopen(LIVROS,"rb");
 
-    //Laço para percorrer o arquivo binário fpLivros
+    //LaÃ§o para percorrer o arquivo binÃ¡rio fpLivros
 
     while (fread(&livro, sizeof(livro), 1, fpLivros)==1)
     {
@@ -851,31 +849,31 @@ void consultarPalavraChaveTitulo()
             categoria = buscarCategoria(livro.categoria);//Busca o nome da categoria
             editora = buscarEditora(livro.editora);//Busca o nome da editora
 
-            //Saída de dados
-            printf("\nCódigo - %d", livro.codigo);
-            printf("\nTítulo - %s", livro.titulo);
-            printf("\nPreço - %5.2f", livro.preco);
+            //SaÃ­da de dados
+            printf("\nCÃ³digo - %d", livro.codigo);
+            printf("\nTÃ­tulo - %s", livro.titulo);
+            printf("\nPreÃ§o - %5.2f", livro.preco);
             autor = buscarAutor(livro.autor1);//Busca o nome do autor1
             printf("\nAutor 1 - %s %s", autor.nome, autor.sobrenome);
 
             //Verificar se o livro possui dois autores
             if(livro.autor2!=0)
             {
-                autor = buscarAutor(livro.autor2); //Enviar o código do autor2
+                autor = buscarAutor(livro.autor2); //Enviar o cÃ³digo do autor2
                 printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
             }
 
-            //Verificar se o livro três autores
+            //Verificar se o livro trÃªs autores
             if(livro.autor3!=0)
             {
-                autor = buscarAutor(livro.autor3);//Enviar o código do autor3
+                autor = buscarAutor(livro.autor3);//Enviar o cÃ³digo do autor3
                 printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
             }
 
             //Verificar se o livro possui quatro autores
             if(livro.autor4!=0)
             {
-                autor = buscarAutor(livro.autor4);//Enviar o código do autor4
+                autor = buscarAutor(livro.autor4);//Enviar o cÃ³digo do autor4
                 printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
             }
 
@@ -896,19 +894,19 @@ void consultarPalavraChaveTitulo()
     fclose(fpLivros);
 }//Fim consultarPalavraChaveTitulo
 
-struct reg_livro buscarLivro(int cod)//Recebe o código do livro
+struct reg_livro buscarLivro(int cod)//Recebe o cÃ³digo do livro
 {
-    //Declaração de ponteiros, structs e variáveis
+    //DeclaraÃ§Ã£o de ponteiros, structs e variÃ¡veis
     FILE *fpLivros;
     struct reg_livro livro;
-    int achou=0;//Variável flag
+    int achou=0;//VariÃ¡vel flag
 
     fpLivros = fopen(LIVROS,"rb");
 
-    //Laço de repetição para percorrer o arquivo binário fpLivros
+    //LaÃ§o de repetiÃ§Ã£o para percorrer o arquivo binÃ¡rio fpLivros
     while ((achou == 0) && (fread(&livro, sizeof(livro), 1, fpLivros)==1))
     {
-        //Condicional para verificar se o código de algum livro do arquivo é igual ao recebido pela função
+        //Condicional para verificar se o cÃ³digo de algum livro do arquivo Ã© igual ao recebido pela funÃ§Ã£o
         if (livro.codigo == cod)  //Achou
         {
             achou = 1;
@@ -917,7 +915,7 @@ struct reg_livro buscarLivro(int cod)//Recebe o código do livro
 
     fclose(fpLivros);
 
-    //Condicional para retornar um código de livro inexistente a função que a chamou
+    //Condicional para retornar um cÃ³digo de livro inexistente a funÃ§Ã£o que a chamou
     if (achou == 0)
     {
         livro.codigo = -1;
@@ -927,19 +925,19 @@ struct reg_livro buscarLivro(int cod)//Recebe o código do livro
 
 }//fim buscarLivro
 
-struct reg_categoria buscarCategoria(int cod)//Recebe o código da categoria
+struct reg_categoria buscarCategoria(int cod)//Recebe o cÃ³digo da categoria
 {
-    //Declaração de ponteiros, structs e variáveis
+    //DeclaraÃ§Ã£o de ponteiros, structs e variÃ¡veis
     FILE *fpCategorias;
     struct reg_categoria categoria;
     int achou = 0;
 
     fpCategorias = fopen(CATEGORIAS,"rb");
 
-    //Laço de repetição para percorrer o arquivo binário fpCategorias
+    //LaÃ§o de repetiÃ§Ã£o para percorrer o arquivo binÃ¡rio fpCategorias
     while ((achou == 0) && (fread(&categoria, sizeof(categoria), 1, fpCategorias)==1))
     {
-        //Condicional para verificar se o código de alguma categoria do arquivo é igual ao recebido pela função
+        //Condicional para verificar se o cÃ³digo de alguma categoria do arquivo Ã© igual ao recebido pela funÃ§Ã£o
         if (categoria.codigo == cod)  //Achou
         {
             achou = 1;
@@ -948,7 +946,7 @@ struct reg_categoria buscarCategoria(int cod)//Recebe o código da categoria
 
     fclose(fpCategorias);
 
-    //Condicional para retornar um código de categoria inexistente a função que a chamou
+    //Condicional para retornar um cÃ³digo de categoria inexistente a funÃ§Ã£o que a chamou
     if (achou == 0)
     {
         categoria.codigo = -1;
@@ -958,19 +956,19 @@ struct reg_categoria buscarCategoria(int cod)//Recebe o código da categoria
 
 }//fim buscarCategoria
 
-struct reg_editora buscarEditora(int cod)//Recebe o código da Editora
+struct reg_editora buscarEditora(int cod)//Recebe o cÃ³digo da Editora
 {
-    //Declaração de ponteiros, structs e variáveis
+    //DeclaraÃ§Ã£o de ponteiros, structs e variÃ¡veis
     FILE *fpEditoras;
     struct reg_editora editora;
     int achou=0;
 
     fpEditoras = fopen(EDITORAS,"rb");
 
-    //Laço de repetição para percorrer o arquivo binário fpEditoras
+    //LaÃ§o de repetiÃ§Ã£o para percorrer o arquivo binÃ¡rio fpEditoras
     while ((achou == 0) && (fread(&editora, sizeof(editora), 1, fpEditoras)==1))
     {
-        //Condicional para verificar se o código de alguma editora do arquivo é igual ao recebido pela função
+        //Condicional para verificar se o cÃ³digo de alguma editora do arquivo Ã© igual ao recebido pela funÃ§Ã£o
         if (editora.codigo == cod)  //Achou
         {
             achou = 1;
@@ -979,7 +977,7 @@ struct reg_editora buscarEditora(int cod)//Recebe o código da Editora
 
     fclose(fpEditoras);
 
-    //Condicional para retornar um código de editora inexistente a função que a chamou
+    //Condicional para retornar um cÃ³digo de editora inexistente a funÃ§Ã£o que a chamou
     if (achou == 0)
     {
         editora.codigo = -1;
@@ -989,19 +987,19 @@ struct reg_editora buscarEditora(int cod)//Recebe o código da Editora
 
 }//fim buscarEditora
 
-struct reg_autor buscarAutor(int cod)//Recebe o código do autor
+struct reg_autor buscarAutor(int cod)//Recebe o cÃ³digo do autor
 {
-    //Declaração de ponteiros, structs e variáveis
+    //DeclaraÃ§Ã£o de ponteiros, structs e variÃ¡veis
     FILE *fpAutores;
     struct reg_autor autor;
     int achou=0;
 
     fpAutores = fopen(AUTORES,"rb");
 
-    //Laço de repetição para percorrer o arquivo binário fpAutores
+    //LaÃ§o de repetiÃ§Ã£o para percorrer o arquivo binÃ¡rio fpAutores
     while ((achou == 0) && (fread(&autor, sizeof(autor), 1, fpAutores)==1))
     {
-        //Condicional para verificar se o código de algum autor do arquivo é igual ao recebido pela função
+        //Condicional para verificar se o cÃ³digo de algum autor do arquivo Ã© igual ao recebido pela funÃ§Ã£o
         if (autor.codigo == cod)  //Achou
         {
             achou = 1;
@@ -1010,7 +1008,7 @@ struct reg_autor buscarAutor(int cod)//Recebe o código do autor
 
     fclose(fpAutores);
 
-    //Condicional para retornar um código de autor inexistente a função que a chamou
+    //Condicional para retornar um cÃ³digo de autor inexistente a funÃ§Ã£o que a chamou
     if (achou == 0)
     {
         autor.codigo = -1;
@@ -1022,11 +1020,11 @@ struct reg_autor buscarAutor(int cod)//Recebe o código do autor
 
 void consultarAutoresPeloNome()
 {
-    //Declaração de ponteiros, structs e variáveis
+    //DeclaraÃ§Ã£o de ponteiros, structs e variÃ¡veis
     FILE *fpAutores;
     struct reg_autor autor;
     char nome[20];
-    int achou = 0;//Variável flag
+    int achou = 0;//VariÃ¡vel flag
 
     //Entrada de dados
     printf("\nDigite o nome do autor a ser Localizado: ");
@@ -1035,24 +1033,24 @@ void consultarAutoresPeloNome()
 
     fpAutores = fopen(AUTORES,"rb");
 
-    //Laço de repetição para percorrer o arquivo binário fpAutores
+    //LaÃ§o de repetiÃ§Ã£o para percorrer o arquivo binÃ¡rio fpAutores
     while ((achou == 0) && (fread(&autor, sizeof(autor), 1, fpAutores)==1))
     {
-        //Condicional para comparar se alguma substring do arquivo fpAutores é igual ao conteúdo da variavel 'nome'
+        //Condicional para comparar se alguma substring do arquivo fpAutores Ã© igual ao conteÃºdo da variavel 'nome'
         if (strstr(autor.nome, nome)!=NULL)  //Achou
         {
-            //Saída de dados
-            printf("\nCódigo - %d", autor.codigo);
+            //SaÃ­da de dados
+            printf("\nCÃ³digo - %d", autor.codigo);
             printf("\nNome - %s", autor.nome);
             printf("\nSobrenome - %s\n\n", autor.sobrenome);
-            achou = 1;//Varíavel flag usada para parar o laço
+            achou = 1;//VarÃ­avel flag usada para parar o laÃ§o
         }
     }
 
-    //Condicional para verificar se variável flag foi alterada
+    //Condicional para verificar se variÃ¡vel flag foi alterada
     if (achou == 0)
     {
-        printf("\nAutor não localizado!\n\n");
+        printf("\nAutor nÃ£o localizado!\n\n");
     }
 
     fclose(fpAutores);
@@ -1061,24 +1059,24 @@ void consultarAutoresPeloNome()
 
 void relatorioLivrosCategoria()
 {
-    //Declaração de ponteiros, structs e variáveis
+    //DeclaraÃ§Ã£o de ponteiros, structs e variÃ¡veis
 
     FILE *fpLivros, *fpCategorias;
-    //As structs declaradas para realizarão consulta das informações presentes em livros
+    //As structs declaradas para realizarÃ£o consulta das informaÃ§Ãµes presentes em livros
     struct reg_livro livro;
     struct reg_autor autor;
     struct reg_categoria categoria;
     struct reg_editora editora;
-    int achou=0, opc; //Variável flag
+    int achou=0, opc; //VariÃ¡vel flag
 
-    printf("\n**           RELATÓRIO LIVROS POR CATEGORIA           **\n");
+    printf("\n**           RELATÃ“RIO LIVROS POR CATEGORIA           **\n");
     printf("\n--------------------------------------------------------\n");
 
     fpCategorias = fopen(CATEGORIAS, "rb");
 
-    //Listando as categorias cadastradas para o usuário
+    //Listando as categorias cadastradas para o usuÃ¡rio
 
-    printf("\nCódigo          Categoria\n");
+    printf("\nCÃ³digo          Categoria\n");
     while(fread(&categoria, sizeof(categoria), 1, fpCategorias)==1)
     {
         printf("\n%d               %s", categoria.codigo, categoria.descricao);
@@ -1089,53 +1087,53 @@ void relatorioLivrosCategoria()
 
     //Entrada de dados
 
-    printf("\n\n-> Selecione o código da categoria: ");
+    printf("\n\n-> Selecione o cÃ³digo da categoria: ");
     fflush(stdin);
     scanf("%d", &opc);
 
     fpLivros = fopen(LIVROS,"rb");
     categoria = buscarCategoria(opc);//Busca o inicial da categoria
 
-    //Laço para percorrer o arquivo binário fpLivros
+    //LaÃ§o para percorrer o arquivo binÃ¡rio fpLivros
 
     while(fread(&livro, sizeof(livro), 1, fpLivros)==1)
     {
-        //Condicional para verificar se código digitado é igual ao de algum livro
+        //Condicional para verificar se cÃ³digo digitado Ã© igual ao de algum livro
         if (livro.categoria==opc)  //Achou
         {
             editora = buscarEditora(livro.editora);//Busca o nome da editora
             autor = buscarAutor(livro.autor1);//Busca o nome do primeiro autor
 
-            //Saída de dados
-            printf("\nCódigo - %d", livro.codigo);
-            printf("\nTítulo - %s", livro.titulo);
-            printf("\nPreço - %5.2f", livro.preco);
+            //SaÃ­da de dados
+            printf("\nCÃ³digo - %d", livro.codigo);
+            printf("\nTÃ­tulo - %s", livro.titulo);
+            printf("\nPreÃ§o - %5.2f", livro.preco);
             printf("\nAutor 1 - %s %s", autor.nome, autor.sobrenome);
 
             //Verificar se o livro possui dois autores
             if(livro.autor2!=0)
             {
-                autor = buscarAutor(livro.autor2); //Enviar o código do autor2
+                autor = buscarAutor(livro.autor2); //Enviar o cÃ³digo do autor2
                 printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
             }
 
-            //Verificar se o livro três autores
+            //Verificar se o livro trÃªs autores
             if(livro.autor3!=0)
             {
-                autor = buscarAutor(livro.autor3);//Enviar o código do autor3
+                autor = buscarAutor(livro.autor3);//Enviar o cÃ³digo do autor3
                 printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
             }
 
             //Verificar se o livro possui quatro autores
             if(livro.autor4!=0)
             {
-                autor = buscarAutor(livro.autor4);//Enviar o código do autor4
+                autor = buscarAutor(livro.autor4);//Enviar o cÃ³digo do autor4
                 printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
             }
 
             printf("\nCategoria - %s", categoria.descricao);
             printf("\nEditora - %s", editora.nome);
-            printf("\nEdição - %d", livro.edicao);
+            printf("\nEdiÃ§Ã£o - %d", livro.edicao);
             printf("\nAno - %s", livro.ano);
             printf("\nQuantidade - %d", livro.qtde);
 
@@ -1154,24 +1152,24 @@ void relatorioLivrosCategoria()
 
 void relatorioLivrosAutor()
 {
-    //Declaração de ponteiros, structs e variáveis
+    //DeclaraÃ§Ã£o de ponteiros, structs e variÃ¡veis
 
     FILE *fpLivros, *fpAutores;
-    //As structs declaradas para realizarão consulta das informações presentes em livros
+    //As structs declaradas para realizarÃ£o consulta das informaÃ§Ãµes presentes em livros
     struct reg_livro livro;
     struct reg_autor autor;
     struct reg_categoria categoria;
     struct reg_editora editora;
-    int achou=0, opc; //Variável flag
+    int achou=0, opc; //VariÃ¡vel flag
 
-    printf("\n**             RELATÓRIO LIVROS POR AUT OR            **\n");
+    printf("\n**             RELATÃ“RIO LIVROS POR AUT OR            **\n");
     printf("\n--------------------------------------------------------\n");
 
     fpAutores = fopen(AUTORES, "rb");
 
-    //Listando os autores cadastrados para o usuário
+    //Listando os autores cadastrados para o usuÃ¡rio
 
-    printf("\nCódigo          Nome\n");
+    printf("\nCÃ³digo          Nome\n");
     while(fread(&autor, sizeof(autor), 1, fpAutores)==1)
     {
         printf("\n%d               %s %s", autor.codigo, autor.nome, autor.sobrenome);
@@ -1182,7 +1180,7 @@ void relatorioLivrosAutor()
 
     //Entrada de dados
 
-    printf("\n\n-> Selecione o código do autor: ");
+    printf("\n\n-> Selecione o cÃ³digo do autor: ");
     fflush(stdin);
     scanf("%d", &opc);
 
@@ -1190,46 +1188,46 @@ void relatorioLivrosAutor()
 
     fpLivros = fopen(LIVROS,"rb");
 
-    //Laço para percorrer o arquivo binário fpLivros
+    //LaÃ§o para percorrer o arquivo binÃ¡rio fpLivros
 
     while(fread(&livro, sizeof(livro), 1, fpLivros)==1)
     {
-        //Condicional para verificar se código digitado de um autor está presente em algum livro
+        //Condicional para verificar se cÃ³digo digitado de um autor estÃ¡ presente em algum livro
         if ((livro.autor1==opc))  //Achou
         {
             categoria = buscarCategoria(opc);//Busca o nome da categoria
             editora = buscarEditora(livro.editora);//Busca o nome da editora
 
-            //Saída de dados
-            printf("\nCódigo - %d", livro.codigo);
-            printf("\nTítulo - %s", livro.titulo);
-            printf("\nPreço - %5.2f", livro.preco);
+            //SaÃ­da de dados
+            printf("\nCÃ³digo - %d", livro.codigo);
+            printf("\nTÃ­tulo - %s", livro.titulo);
+            printf("\nPreÃ§o - %5.2f", livro.preco);
             printf("\nCategoria - %s", categoria.descricao);
             printf("\nAutor 1 - %s %s", autor.nome, autor.sobrenome);
 
             //Verificar se o livro possui dois autores
             if((livro.autor2!=0))
             {
-                autor = buscarAutor(livro.autor2); //Enviar o código do autor2
+                autor = buscarAutor(livro.autor2); //Enviar o cÃ³digo do autor2
                 printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
             }
 
-            //Verificar se o livro três autores
+            //Verificar se o livro trÃªs autores
             if(livro.autor3!=0)
             {
-                autor = buscarAutor(livro.autor3);//Enviar o código do autor3
+                autor = buscarAutor(livro.autor3);//Enviar o cÃ³digo do autor3
                 printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
             }
 
             //Verificar se o livro possui quatro autores
             if(livro.autor4!=0)
             {
-                autor = buscarAutor(livro.autor4);//Enviar o código do autor4
+                autor = buscarAutor(livro.autor4);//Enviar o cÃ³digo do autor4
                 printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
             }
 
             printf("\nEditora - %s", editora.nome);
-            printf("\nEdição - %d", livro.edicao);
+            printf("\nEdiÃ§Ã£o - %d", livro.edicao);
             printf("\nAno - %s", livro.ano);
             printf("\nQuantidade - %d", livro.qtde);
 
@@ -1248,7 +1246,7 @@ void relatorioLivrosAutor()
 
 void relatorioEstoqueTxt()
 {
-    //Declarando ponteiros, structs e variáveis
+    //Declarando ponteiros, structs e variÃ¡veis
     FILE *fpLivros, *fpLivrosTxt;
     struct reg_livro livro;
     struct reg_autor autor;
@@ -1262,7 +1260,7 @@ void relatorioEstoqueTxt()
     fpLivrosTxt = fopen("RelatorioEstoqueLivros.txt", "w");
     fpLivros = fopen(LIVROS, "rb");
 
-    fputs("\n**            RELATÓRIO LIVROS POR ESTOQUE            **\n", fpLivrosTxt);
+    fputs("\n**            RELATÃ“RIO LIVROS POR ESTOQUE            **\n", fpLivrosTxt);
     fputs("\n--------------------------------------------------------\n", fpLivrosTxt);
 
 
@@ -1272,49 +1270,49 @@ void relatorioEstoqueTxt()
     fflush(stdin);
     scanf("%d", &qtde);
 
-    //Percorrer arquivo fpLivros com um laço
+    //Percorrer arquivo fpLivros com um laÃ§o
 
-    fputs("\nCodigo                   Titulo                            Autor  Categoria  Editora  Edição   Ano  Qtde", fpLivrosTxt);
+    fputs("\nCodigo                   Titulo                            Autor  Categoria  Editora  EdiÃ§Ã£o   Ano  Qtde", fpLivrosTxt);
 
     while(fread(&livro, sizeof(livro), 1, fpLivros)==1)
     {
-        //Condicional para verificar se a quantidade digitada é igual ou maior a de algum livro
+        //Condicional para verificar se a quantidade digitada Ã© igual ou maior a de algum livro
         if(livro.qtde<=qtde)  //Achou
         {
             editora = buscarEditora(livro.editora);//Busca o nome da editora
             autor = buscarAutor(livro.autor1);//Busca o nome do primeiro autor
             categoria = buscarCategoria(livro.categoria);//Busca o nome da categoria
 
-            //Saída de dados
-            printf("\nCódigo - %d", livro.codigo);
-            printf("\nTítulo - %s", livro.titulo);
-            printf("\nPreço - %5.2f", livro.preco);
+            //SaÃ­da de dados
+            printf("\nCÃ³digo - %d", livro.codigo);
+            printf("\nTÃ­tulo - %s", livro.titulo);
+            printf("\nPreÃ§o - %5.2f", livro.preco);
             printf("\nAutor 1 - %s %s", autor.nome, autor.sobrenome);
 
             //Verificar se o livro possui dois autores
             if(livro.autor2!=0)
             {
-                autor = buscarAutor(livro.autor2); //Enviar o código do autor2
+                autor = buscarAutor(livro.autor2); //Enviar o cÃ³digo do autor2
                 printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
             }
 
-            //Verificar se o livro três autores
+            //Verificar se o livro trÃªs autores
             if(livro.autor3!=0)
             {
-                autor = buscarAutor(livro.autor3);//Enviar o código do autor3
+                autor = buscarAutor(livro.autor3);//Enviar o cÃ³digo do autor3
                 printf("\nAutor 3 - %s %s", autor.nome, autor.sobrenome);
             }
 
             //Verificar se o livro possui quatro autores
             if(livro.autor4!=0)
             {
-                autor = buscarAutor(livro.autor4);//Enviar o código do autor4
+                autor = buscarAutor(livro.autor4);//Enviar o cÃ³digo do autor4
                 printf("\nAutor 4 - %s %s", autor.nome, autor.sobrenome);
             }
 
             printf("\nCategoria - %s", categoria.descricao);
             printf("\nEditora - %s", editora.nome);
-            printf("\nEdição - %d", livro.edicao);
+            printf("\nEdiÃ§Ã£o - %d", livro.edicao);
             printf("\nAno - %s", livro.ano);
             printf("\nQuantidade - %d", livro.qtde);
 
@@ -1346,25 +1344,25 @@ void relatorioEstoqueTxt()
 
 void relatorioPrecoCategoria()
 {
-    //Declaração de ponteiros, structs e variáveis
+    //DeclaraÃ§Ã£o de ponteiros, structs e variÃ¡veis
 
     FILE *fpLivros, *fpCategorias;
-    //As structs declaradas para realizarão consulta das informações presentes em livros
+    //As structs declaradas para realizarÃ£o consulta das informaÃ§Ãµes presentes em livros
     struct reg_livro livro;
     struct reg_autor autor;
     struct reg_categoria categoria;
     struct reg_editora editora;
-    int achou=0, opc, codigo=0; //Variável flag
+    int achou=0, opc, codigo=0; //VariÃ¡vel flag
     float maior=0.0, maiorAux=0.0;
 
-    printf("\n**           RELATÓRIO LIVROS POR CATEGORIA           **\n");
+    printf("\n**           RELATÃ“RIO LIVROS POR CATEGORIA           **\n");
     printf("\n--------------------------------------------------------\n");
 
     fpCategorias = fopen(CATEGORIAS, "rb");
 
-    //Listando as categorias cadastradas para o usuário
+    //Listando as categorias cadastradas para o usuÃ¡rio
 
-    printf("\nCódigo          Categoria\n");
+    printf("\nCÃ³digo          Categoria\n");
     while(fread(&categoria, sizeof(categoria), 1, fpCategorias)==1)
     {
         printf("\n%d               %s", categoria.codigo, categoria.descricao);
@@ -1375,14 +1373,14 @@ void relatorioPrecoCategoria()
 
     //Entrada de dados
 
-    printf("\n\n-> Selecione o código da categoria: ");
+    printf("\n\n-> Selecione o cÃ³digo da categoria: ");
     fflush(stdin);
     scanf("%d", &opc);
 
     fpLivros = fopen(LIVROS,"rb");
     categoria = buscarCategoria(opc);//Busca inicial da categoria
 
-    //Laço para percorrer o arquivo binário fpLivros
+    //LaÃ§o para percorrer o arquivo binÃ¡rio fpLivros
 
     while(fread(&livro, sizeof(livro), 1, fpLivros)==1)
     {
@@ -1390,7 +1388,7 @@ void relatorioPrecoCategoria()
         {
             maior = livro.preco;
 
-            //Condicional para verificar se código digitado é igual ao de algum livro
+            //Condicional para verificar se cÃ³digo digitado Ã© igual ao de algum livro
             if (maior > maiorAux)
             {
                 maiorAux = maior;
@@ -1403,36 +1401,36 @@ void relatorioPrecoCategoria()
     editora = buscarEditora(livro.editora);//Busca o nome da editora
     autor = buscarAutor(livro.autor1);//Busca o nome do primeiro autor
 
-    //Saída de dados
-    printf("\nCódigo - %d", livro.codigo);
-    printf("\nTítulo - %s", livro.titulo);
-    printf("\nPreço - %5.2f", livro.preco);
+    //SaÃ­da de dados
+    printf("\nCÃ³digo - %d", livro.codigo);
+    printf("\nTÃ­tulo - %s", livro.titulo);
+    printf("\nPreÃ§o - %5.2f", livro.preco);
     printf("\nAutor 1 - %s %s", autor.nome, autor.sobrenome);
 
     //Verificar se o livro possui dois autores
     if(livro.autor2!=0)
     {
-        autor = buscarAutor(livro.autor2); //Enviar o código do autor2
+        autor = buscarAutor(livro.autor2); //Enviar o cÃ³digo do autor2
         printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
     }
 
-    //Verificar se o livro três autores
+    //Verificar se o livro trÃªs autores
     if(livro.autor3!=0)
     {
-        autor = buscarAutor(livro.autor3);//Enviar o código do autor3
+        autor = buscarAutor(livro.autor3);//Enviar o cÃ³digo do autor3
         printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
     }
 
     //Verificar se o livro possui quatro autores
     if(livro.autor4!=0)
     {
-        autor = buscarAutor(livro.autor4);//Enviar o código do autor4
+        autor = buscarAutor(livro.autor4);//Enviar o cÃ³digo do autor4
         printf("\nAutor 2 - %s %s", autor.nome, autor.sobrenome);
     }
 
     printf("\nCategoria - %s", categoria.descricao);
     printf("\nEditora - %s", editora.nome);
-    printf("\nEdição - %d", livro.edicao);
+    printf("\nEdiÃ§Ã£o - %d", livro.edicao);
     printf("\nAno - %s", livro.ano);
     printf("\nQuantidade - %d", livro.qtde);
 
